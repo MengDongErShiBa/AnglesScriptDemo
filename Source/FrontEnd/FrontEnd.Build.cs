@@ -9,7 +9,9 @@ public class FrontEnd : ModuleRules
         PublicDependencyModuleNames.AddRange(
             new string[]
             {
-                "Core", "UMG",
+                "Core", 
+                "UMG", 
+                "ModelViewViewModel",
             }
         );
 
