@@ -1,11 +1,16 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "{3F43C5F9-45B0-2746-07DE-509BCC15440E}",
+	"EngineAssociation": "{867135FA-4DD8-0815-74A7-1BA36AF39C96}",
 	"Category": "",
 	"Description": "",
 	"Modules": [
 		{
 			"Name": "AngleDemo",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "FrontEnd",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
 		}
@@ -17,6 +22,10 @@
 			"TargetAllowList": [
 				"Editor"
 			]
+		},
+		{
+			"Name": "ModelViewViewModel",
+			"Enabled": true
 		}
 	]
 }
