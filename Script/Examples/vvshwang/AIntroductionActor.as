@@ -15,10 +15,13 @@ class AIntroductionActor : AActor
     // DefaultComponent等价于构造函数中的 CreateDefaultSubobject
     // RootComponent 用于指定该组件为根组件
     // RootComponent等价于构造函数中的SetRootComponent
+    // 如果没有指定RootComponent，那么第一个创建的组件将成为根组件
     UPROPERTY(DefaultComponent, RootComponent)
     USceneComponent SceneRoot;
 
     // Attach 属性用于将 Mesh 组件附加到 SceneRoot
+    // 如果没有指定，将默认附加到SceneRoot因为没有手动指定组件
+    // AttachSocket = RightHand 等价于 附加到 SceneRoot 的 RightHand Socket
     UPROPERTY(DefaultComponent, Attach = SceneRoot)
     UStaticMeshComponent Mesh;
 
@@ -69,6 +72,8 @@ class AIntroductionActor : AActor
                 }
             }
         }
+
+    
     }
 
     // UFUNCTIONs are used to expose functions to Blueprints

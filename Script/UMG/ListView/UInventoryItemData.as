@@ -17,7 +17,7 @@ class UInventoryItemData : UObject
     default bIsSelected = false;
 
     // 修饰符，和C++侧一样，不过需要每个指定，默认是Public
-    FText GetConent()
+    FText GetConent() const property
     {
         return Content;
     }
@@ -36,4 +36,12 @@ class UInventoryItemData : UObject
     {
         bIsSelected = bNewIsSelected;
     }
+}
+
+class UTest : UMVVMViewModelBase
+{
+    UPROPERTY(EditAnywhere)
+    float Test;
+    UPROPERTY()
+    float Test2;
 }

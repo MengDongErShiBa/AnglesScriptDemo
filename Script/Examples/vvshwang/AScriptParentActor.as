@@ -4,6 +4,9 @@
  */
 class AAScriptParentActor : AActor
 {
+    UPROPERTY(DefaultComponent, RootComponent)
+    USceneComponent SceneRoot;
+
     void PlainMethod(FVector Location)
     {
         Print("PlainMethod called with Location: " + Location.ToString());
@@ -20,6 +23,11 @@ class AAScriptParentActor : AActor
 // 重写示例
 class AAScriptChildActor : AAScriptParentActor
 {
+    // 覆盖父类的默认组件SceneRoot
+    // 类似于C++的 ObjectInitializer.SetDefaultSubobjectClass()
+    UPROPERTY(OverrideComponent = SceneRoot)
+    USceneComponent ChildRootComponent;
+
     UFUNCTION(BlueprintOverride)
     void BeginPlay()
     {
